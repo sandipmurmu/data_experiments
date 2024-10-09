@@ -2,4 +2,4 @@
 
 ## contents
 - stock price demonstration
-- demonstration of main functions, used in activation functions in NN
+- demonstration of main functions, used as activation functions in NN
