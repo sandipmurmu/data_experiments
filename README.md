@@ -1,4 +1,4 @@
 # data_experiments
 
 ## contents
-main functions, often used as activation functions in NN.
+- demonstration of main functions, used in activation functions in NN
