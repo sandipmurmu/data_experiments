@@ -14,7 +14,7 @@ sentence = "the quick brown fox jumps over a lazy dog"
 s_dict = {s: i for i, s in enumerate(sorted(sentence.replace(',', '').split()))}
 #print(s_dict)
 
-# convert into integers into tensor
+# convert integers into tensor
 arr_nums = [s_dict[i] for i in sentence.replace(',','').split()]
 s_tensor = torch.tensor(arr_nums)
 #print(s_tensor)
