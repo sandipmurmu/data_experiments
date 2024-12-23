@@ -52,7 +52,7 @@ amplitude = 2
 sg = Signal(5,amplitude, duration, sampling_rate)
 sinewave = sg.sine_wave()
 dampped_sine = sg.damping_signal(sinewave)
-noise = sg.noisy_sigal(2,1, dampped_sine)
+noise = sg.noisy_sigal(2,1, sinewave)
 time = np.linspace(0, duration, duration * sampling_rate)
 
 #square = sg.square_wave()
