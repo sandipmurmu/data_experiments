@@ -1,6 +1,9 @@
 import numpy as np
 from scipy import signal
+from scipy.fft import fft
 import matplotlib.pyplot as plt
+
+# https://towardsdatascience.com/fourier-transform-the-practical-python-implementation-acdd32f1b96a
 
 class Signal:
 
@@ -48,12 +51,17 @@ amplitude = 2
 
 sg = Signal(5,amplitude, duration, sampling_rate)
 sinewave = sg.sine_wave()
-#dampped_sine = sg.damping_signal(sinewave)
-#noise = sg.noisy_sigal(2,1, dampped_sine)
+dampped_sine = sg.damping_signal(sinewave)
+noise = sg.noisy_sigal(2,1, dampped_sine)
 time = np.linspace(0, duration, duration * sampling_rate)
 
-square = sg.square_wave()
-pulsated = sg.pulsated_sinsoidal(square, sinewave)
+#square = sg.square_wave()
+#pulsated = sg.pulsated_sinsoidal(square, sinewave)
 
-plt.plot(time,pulsated)
+#plt.plot(time,noise)
+#plt.show()
+
+
+fourier = fft(noise)
+plt.plot(np.abs(fourier))
 plt.show()
