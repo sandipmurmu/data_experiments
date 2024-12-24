@@ -35,7 +35,7 @@ class Signal:
     def damping_signal(self, signal):
         return self._exp() * signal
     
-    def noisy_sigal(self, location, scale, signal):
+    def noisy_signal(self, location, scale, signal):
         noise = np.random.normal(location, scale, size=signal.shape)
         return signal + noise
 
@@ -52,7 +52,7 @@ amplitude = 2
 sg = Signal(5,amplitude, duration, sampling_rate)
 sinewave = sg.sine_wave()
 dampped_sine = sg.damping_signal(sinewave)
-noise = sg.noisy_sigal(2,1, sinewave)
+noise = sg.noisy_signal(2,1, sinewave)
 time = np.linspace(0, duration, duration * sampling_rate)
 
 #square = sg.square_wave()
